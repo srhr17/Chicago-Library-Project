@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from folium import Marker,Popup,Icon
+import folium
 from streamlit_folium import st_folium
 
 st.set_page_config(page_title='Chicago Public Libraries : My Journey',page_icon='📚')
