@@ -54,3 +54,4 @@ if st.checkbox('View the entire list'):
     st.data_editor(df)
 
 
+st.write(":red[Sri Hari 2023. All rights reserved.]")
