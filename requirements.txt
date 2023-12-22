@@ -1,5 +1,5 @@
 streamlit
 pandas==1.4.2
 folium
-streamlit-folium==0.6.0
+streamlit-folium
 numpy==1.22.3
