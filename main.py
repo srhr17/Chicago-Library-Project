@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
 import folium
 from folium import Marker,Popup,Icon
 from streamlit_folium import st_folium
