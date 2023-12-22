@@ -48,7 +48,7 @@ for i, row in df.iterrows():
         ).add_to(m)
 
 
-st_folium(m,width=500,height=700)
+st_folium(m,width=500)
 
 if st.checkbox('View the entire list'):
     st.data_editor(df)
