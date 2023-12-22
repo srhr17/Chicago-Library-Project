@@ -35,7 +35,7 @@ for i, row in df.iterrows():
     if row['visited']==True:
         Marker(
             location=[row['lat'],row['lon']],
-            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Yes</h6> ("+ row['WEBSITE']  +")" , parse_html=False),
+            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Yes</h6> ("+ row['WEBSITE']  +") <p> "+row['notes']+"</p>" , parse_html=False),
             tooltip=row['NAME'] + " (" +row['ADDRESS'] + ")",
             icon=Icon(icon="heart",icon_color='red')
         ).add_to(m)
