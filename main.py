@@ -32,17 +32,19 @@ st.header("been there ?")
 m = folium.Map(location=[df.loc[5,'lat'], df.loc[5,'lon']], zoom_start=10.5)
 
 for i, row in df.iterrows():
+    resolved_address = "https://maps.google.com?q="+str(row['lat'])+","+str(row['lon'])
+    print(resolved_address)
     if row['visited']==True:
         Marker(
             location=[row['lat'],row['lon']],
-            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Yes</h6> ("+ str(row['WEBSITE'])  +") <p> "+str(row['notes'])+"</p>" , parse_html=False),
+            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Yes</h6> ("+ str(row['WEBSITE'])  +") <p> "+str(row['notes'])+"</p>" +"<a href="+resolved_address+">Get Directions</a>" , parse_html=False),
             tooltip=row['NAME'] + " (" +row['ADDRESS'] + ")",
             icon=Icon(icon="heart",icon_color='red')
         ).add_to(m)
     else:
         Marker(
             location=[row['lat'],row['lon']],
-            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Nope</h6> ("+ str(row['WEBSITE'])    +")" , parse_html=False),
+            popup=Popup("<h1>" + row['NAME'] +"</h1><h6> Visited? Nope</h6> ("+ str(row['WEBSITE'])    +") "+"<a href="+resolved_address+">Get Directions</a>"  , parse_html=False),
             tooltip=row['NAME'] + " (" +row['ADDRESS'] + ")",
             icon=Icon(icon="heart",icon_color='gray')
         ).add_to(m)
